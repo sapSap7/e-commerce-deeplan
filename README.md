@@ -1,3 +1,6 @@
+SharePoint project attached in this repo's root
+
+React + Node App:
 Run locally:
 
 1. Install PostgreSQL:
