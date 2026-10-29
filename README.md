@@ -1,10 +1,17 @@
 Run locally:
 
-1. Install PostgreSQL
-   username: postgres
-   password: 12345678
-   database name: db
-   port: 5432
+1. Install PostgreSQL:
+   User: `postgres`
+   Password: `12345678`
+   Database: `db`
+   Host: `localhost`
+   Port: `5432`
+   1. Create the user and database:
+      `CREATE USER <postgres> WITH PASSWORD '<12345678>';`
+      `CREATE DATABASE <db> OWNER <postgres>;`
+
+   2. Create the table:
+      `psql -U <db_user> -d <db_name> -f schema.sql`
 
 2. Open two terminals in the project directory:
    `cd backend`
@@ -17,7 +24,7 @@ Run locally:
    VITE_BACKEND_BASE_URL=http://localhost:3000
 
 5. Create a .env file in baceknd directory and add these variables:
-   DATABASE_URL=postgresql://{username}:{password}@localhost:{port}/{database_name}
+   DATABASE_URL=postgresql://{username}:{password}@{host}:{port}/{database_name}
    PORT=3000
 
 6. Start the backend server:
